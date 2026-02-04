@@ -1,7 +1,10 @@
-package com.splitwise.model;
+package casestudies.splitwise.src.main.java.com.splitwise.model;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import casestudies.splitwise.src.main.java.com.splitwise.model.User;
+import  casestudies.splitwise.src.main.java.com.splitwise.model.Expense;
 
 public class BalanceSheetManager {
 

@@ -1,7 +1,7 @@
-package com.splitwise.model;
+package casestudies.splitwise.src.main.java.com.splitwise.model;
 
 import java.util.Map;
-
+import  casestudies.splitwise.src.main.java.com.splitwise.model.User;
 public class Expense {
 
     private int expenseId;

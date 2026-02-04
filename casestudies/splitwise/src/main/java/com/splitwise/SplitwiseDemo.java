@@ -1,8 +1,8 @@
-package com.splitwise;
+package casestudies.splitwise.src.main.java.com.splitwise;
 
-import com.splitwise.model.BalanceSheetManager;
-import com.splitwise.model.Expense;
-import com.splitwise.model.User;
+import casestudies.splitwise.src.main.java.com.splitwise.model.BalanceSheetManager;
+import casestudies.splitwise.src.main.java.com.splitwise.model.Expense;
+import casestudies.splitwise.src.main.java.com.splitwise.model.User;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.splitwise.model;
+package casestudies.splitwise.src.main.java.com.splitwise.model;
 
 public class User {
 
