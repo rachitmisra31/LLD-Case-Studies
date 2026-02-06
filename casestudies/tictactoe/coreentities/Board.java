@@ -1,0 +1,62 @@
+package casestudies.tictactoe.coreentities;
+
+import casestudies.tictactoe.dataclasses.Cell;
+import casestudies.tictactoe.enums.Symbol;
+import casestudies.tictactoe.exception.InvalidMoveException;
+
+public class Board {
+
+    private final int size;
+    private Cell[][] grid;
+    
+    public Board(int size){
+        this.size = size;
+        grid = new Cell[size][size];
+        initializeBoard();
+    }
+
+    private void initializeBoard() {
+        for(int i= 0; i<size; i++){
+            for(int j= 0; j<size; j++){
+                grid[i][j] = new Cell();
+            }
+        }
+    }
+
+    private void placeSymbol(int row, int col, Symbol symbol){
+        validatePosition( row, col);
+        grid[row][col].setSymbol(symbol);
+    }
+
+    private boolean isCellEmpty(int row, int col){
+        validatePosition(row, col);
+        return grid[row][col].isEmpty();
+    }
+
+    private void validatePosition(int row, int col) {
+
+        if(row<0 || row>= size || col<0 || col>= size){
+            throw new InvalidMoveException("This is not a valid cell");
+        }
+    }
+
+    public Cell getCell(int row, int col){
+        validatePosition(row, col);
+        return grid[row][col];
+    }
+
+    public int getSize(){
+        return size;
+    }
+
+    public boolean isFull(){
+        for(int i = 0; i<size; i++){
+            for(int j = 0; j<size; j++){
+                if(grid[i][j].isEmpty()){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+}
