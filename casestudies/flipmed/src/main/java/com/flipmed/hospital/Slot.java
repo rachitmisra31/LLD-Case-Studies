@@ -1,4 +1,4 @@
-package com.flipmed.hospital;
+package casestudies.flipmed.src.main.java.com.flipmed.hospital;
 
 import java.time.LocalTime;
 

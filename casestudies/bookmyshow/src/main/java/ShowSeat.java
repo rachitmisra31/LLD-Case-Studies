@@ -1,3 +1,5 @@
+package casestudies.bookmyshow.src.main.java;
+
 public class ShowSeat {
 
     private final Seat seat;

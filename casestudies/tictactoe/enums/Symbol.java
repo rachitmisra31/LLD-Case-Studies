@@ -12,7 +12,7 @@ public enum Symbol {
       this.displayChar = displayChar;
    }
 
-   private char getDisplayChar() {
+   public char getDisplayChar() {
        return displayChar;
    }
 
