@@ -1,4 +1,4 @@
-package hospitalmanagement;
+package casestudies.doctorpatientmanagementsystem.src.main.java.hospitalmanagement;
 
 import java.util.*;
 
