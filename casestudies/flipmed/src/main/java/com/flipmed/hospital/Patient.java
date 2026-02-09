@@ -1,4 +1,4 @@
-package com.flipmed.hospital;
+package casestudies.flipmed.src.main.java.com.flipmed.hospital;
 
 public class Patient {
     private final String name;
