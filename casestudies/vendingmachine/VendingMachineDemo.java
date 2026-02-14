@@ -1,5 +1,7 @@
 package casestudies.vendingmachine;
 
+import casestudies.vendingmachine.enums.Coin;
+
 public class VendingMachineDemo {
     public static void main(String[] args) {
         VendingMachine vendingMachine = VendingMachine.getInstance();
