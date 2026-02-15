@@ -6,13 +6,13 @@ import casestudies.vendingmachine.enums.Coin;
 
 public abstract class VendingMachineState {
 
-    VendingMachine vendingMachine;
+   protected VendingMachine vendingMachine;
     VendingMachineState(VendingMachine vendingMachine){
         this.vendingMachine = vendingMachine;
     }
 
     public abstract void insertCoin(Coin coin);
-    public abstract void selectItem(Item item);
+    public abstract void selectItem(String itemCode);
     public abstract void dispense();
     public abstract void refund();
 }
