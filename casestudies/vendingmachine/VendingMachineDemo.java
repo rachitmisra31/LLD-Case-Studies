@@ -20,6 +20,7 @@ public class VendingMachineDemo {
         vendingMachine.insertCoin(Coin.DIME); // 10
         vendingMachine.insertCoin(Coin.DIME); // 10
         vendingMachine.insertCoin(Coin.NICKEL); // 5
+        vendingMachine.insertCoin(Coin.QUARTER);//25
 
         // Dispense the product
         System.out.println("\n--- Step 3: Dispense item ---");
