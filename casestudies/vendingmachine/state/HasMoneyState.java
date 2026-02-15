@@ -1,6 +1,9 @@
-package casestudies.vendingmachine.state;
+    package casestudies.vendingmachine.state;
 
-class HasMoneyState extends VendingMachineState {
+import casestudies.vendingmachine.VendingMachine;
+import casestudies.vendingmachine.enums.Coin;
+
+public class HasMoneyState extends VendingMachineState {
     public HasMoneyState(VendingMachine machine) {
         super(machine);
     }
@@ -17,14 +20,13 @@ class HasMoneyState extends VendingMachineState {
 
     @Override
     public void dispense() {
-        machine.setState(new DispensingState(machine));
-        machine.dispenseItem();
+        int quantity = 1; // You can modify this to retrieve the desired quantity
+        vendingMachine.dispenseItem(quantity); // Call dispenseItem with the specified quantity
     }
 
     @Override
     public void refund() {
-        machine.refundBalance();
-        machine.reset();
-        machine.setState(new IdleState(machine));
+        vendingMachine.refundBalance();
+        vendingMachine.setState(new IdleState(vendingMachine));
     }
 }
