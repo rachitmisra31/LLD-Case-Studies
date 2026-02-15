@@ -18,8 +18,7 @@ public class IdleState extends VendingMachineState {
     @Override
     public void selectItem(String code) {
         if (!vendingMachine.getInventory().isAvailable(code)) {
-            System.out.println("Item not available.");
-            return;
+            throw new IllegalStateException("This item is not available.");
         }
         vendingMachine.setSelectedItemCode(code);
         vendingMachine.setState(new ItemSelectedState(vendingMachine));
