@@ -3,24 +3,26 @@ package casestudies.vendingmachine.state;
 import casestudies.vendingmachine.VendingMachine;
 import casestudies.vendingmachine.enums.Coin;
 
-class IdleState extends VendingMachineState {
+public class IdleState extends VendingMachineState {
     public IdleState(VendingMachine machine) {
         super(machine);
     }
+
 
     @Override
     public void insertCoin(Coin coin) {
         System.out.println("Please select an item before inserting money.");
     }
 
+
     @Override
     public void selectItem(String code) {
-        if (!machine.getInventory().isAvailable(code)) {
+        if (!vendingMachine.getInventory().isAvailable(code)) {
             System.out.println("Item not available.");
             return;
         }
-        machine.setSelectedItemCode(code);
-        machine.setState(new ItemSelectedState(machine));
+        vendingMachine.setSelectedItemCode(code);
+        vendingMachine.setState(new ItemSelectedState(vendingMachine));
         System.out.println("Item selected: " + code);
     }
 
