@@ -6,8 +6,9 @@ import casestudies.vendingmachine.enums.Coin;
 import casestudies.vendingmachine.state.IdleState;
 import casestudies.vendingmachine.state.VendingMachineState;
 
-class VendingMachine {
-    private final static VendingMachine INSTANCE = new VendingMachine();
+public class VendingMachine {
+    private static volatile VendingMachine INSTANCE;
+    private static final Object lock = new Object();
     private final Inventory inventory = new Inventory();
     private VendingMachineState currentState;
     private int balance = 0;
@@ -18,6 +19,14 @@ class VendingMachine {
     }
 
     public static VendingMachine getInstance() {
+        if(INSTANCE == null) {
+            synchronized (lock){
+                if(INSTANCE == null) {
+                    INSTANCE = new VendingMachine();
+                }
+            }
+
+        }
         return INSTANCE;
     }
 
@@ -39,15 +48,34 @@ class VendingMachine {
         currentState.dispense();
     }
 
-    public void dispenseItem() {
+    /**
+     *  public void dispenseItem() {
+     *         Item item = inventory.getItem(selectedItemCode);
+     *         if (balance >= item.getPrice()) {
+     *             inventory.reduceStock(selectedItemCode);
+     *             balance -= item.getPrice();
+     *             System.out.println("Dispensed: " + item.getName());
+     *             if (balance > 0) {
+     *                 System.out.println("Returning change: " + balance);
+     *             }
+     *         }
+     *         reset();
+     *         setState(new IdleState(this));
+     *     }
+     * @param quantity
+     */
+
+    public void dispenseItem(int quantity) {
         Item item = inventory.getItem(selectedItemCode);
-        if (balance >= item.getPrice()) {
-            inventory.reduceStock(selectedItemCode);
-            balance -= item.getPrice();
-            System.out.println("Dispensed: " + item.getName());
+        if (balance >= item.getPrice() * quantity) { // Check balance against total price
+            inventory.reduceStock(selectedItemCode, quantity); // Adjust stock based on quantity
+            balance -= item.getPrice() * quantity; // Deduct total price from balance
+            System.out.println("Dispensed: " + item.getName() + " x " + quantity); // Indicate quantity dispensed
             if (balance > 0) {
                 System.out.println("Returning change: " + balance);
             }
+        } else {
+            System.out.println("Insufficient balance for " + quantity + " item(s).");
         }
         reset();
         setState(new IdleState(this));
