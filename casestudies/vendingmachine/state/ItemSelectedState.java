@@ -17,6 +17,7 @@ class ItemSelectedState extends VendingMachineState {
         if (vendingMachine.getBalance() >= price) {
             System.out.println("Sufficient money received.");
             vendingMachine.setState(new HasMoneyState(vendingMachine));
+
         }
     }
 

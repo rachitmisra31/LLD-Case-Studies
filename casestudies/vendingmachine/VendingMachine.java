@@ -34,10 +34,9 @@ public class VendingMachine {
         currentState.insertCoin(coin);
     }
 
-    public Item addItem(String code, String name, int price, int quantity) {
+    public void addItem(String code, String name, int price, int quantity) {
         Item item = new Item(code, name, price);
         inventory.addItem(code, item, quantity);
-        return item;
     }
 
     public void selectItem(String code) {
