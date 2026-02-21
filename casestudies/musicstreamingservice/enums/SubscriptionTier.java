@@ -1,4 +1,4 @@
-package casestudies.spotify.enums;
+package casestudies.musicstreamingservice.enums;
 
 public enum SubscriptionTier {
 
