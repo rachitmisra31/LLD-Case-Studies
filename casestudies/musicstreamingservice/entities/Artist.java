@@ -1,6 +1,6 @@
-package casestudies.spotify.entities;
+package casestudies.musicstreamingservice.entities;
 
-import musicstreamingservice.observer.Subject;
+import casestudies.musicstreamingservice.observers.Subject;
 
 import java.util.ArrayList;
 import java.util.List;
