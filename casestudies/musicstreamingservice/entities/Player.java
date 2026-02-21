@@ -1,8 +1,9 @@
-package casestudies.spotify.entities;
+package casestudies.musicstreamingservice.entities;
 
-import musicstreamingservice.enums.PlayerStatus;
-import musicstreamingservice.state.PlayerState;
-import musicstreamingservice.state.StoppedState;
+import casestudies.musicstreamingservice.enums.PlayerStatus;
+import casestudies.musicstreamingservice.state.PlayerState;
+import casestudies.musicstreamingservice.state.StoppedState;
+
 
 import java.util.ArrayList;
 import java.util.List;
