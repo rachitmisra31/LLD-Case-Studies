@@ -1,6 +1,7 @@
-package casestudies.spotify.command;
+package casestudies.musicstreamingservice.command;
 
-import musicstreamingservice.entities.Player;
+
+import casestudies.musicstreamingservice.entities.Player;
 
 public class NextTrackCommand implements Command {
     private final Player player;
