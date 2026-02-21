@@ -1,8 +1,8 @@
-package casestudies.spotify.entities;
+package casestudies.musicstreamingservice.entities;
 
-import musicstreamingservice.enums.SubscriptionTier;
-import musicstreamingservice.observer.ArtistObserver;
-import musicstreamingservice.strategies.playback.PlaybackStrategy;
+import casestudies.musicstreamingservice.enums.SubscriptionTier;
+import casestudies.musicstreamingservice.observers.ArtistObserver;
+import casestudies.musicstreamingservice.strategies.playback.PlaybackStrategy;
 
 import java.util.HashSet;
 import java.util.Set;
