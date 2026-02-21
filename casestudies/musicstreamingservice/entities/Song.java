@@ -1,4 +1,4 @@
-package casestudies.spotify.entities;
+package casestudies.musicstreamingservice.entities;
 
 import java.util.Collections;
 import java.util.List;
