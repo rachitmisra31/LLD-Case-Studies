@@ -9,13 +9,13 @@ public class ParkingSpot {
     private Vehicle parkedVehicle;
     private VehicleSize size;
 
-    public ParkingSpot(String spotId, Vehicle vehicle) {
+    public ParkingSpot(String spotId, VehicleSize size) {
         this.spotId = spotId;
-        this.parkedVehicle = vehicle;
+        this.size = size;
     }
 
     public Vehicle parkVehicle(Vehicle vehicle){
-        if(vehicle.getSize().ordinal()> parkedVehicle.getSize().ordinal()){
+        if(vehicle.getSize().ordinal()> size.ordinal()){
             throw new ParkingException("Vehicle cannot be parked here");
         }
 
