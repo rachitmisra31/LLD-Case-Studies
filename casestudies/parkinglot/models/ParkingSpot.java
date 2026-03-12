@@ -1,11 +1,13 @@
 package casestudies.parkinglot.models;
 
+import casestudies.parkinglot.emums.VehicleSize;
 import casestudies.parkinglot.exception.ParkingException;
 
 public class ParkingSpot {
 
     private String spotId;
     private Vehicle parkedVehicle;
+    private VehicleSize size;
 
     public ParkingSpot(String spotId, Vehicle vehicle) {
         this.spotId = spotId;
@@ -45,5 +47,9 @@ public class ParkingSpot {
 
     public void setVehicle(Vehicle vehicle) {
         this.parkedVehicle = vehicle;
+    }
+
+    public VehicleSize getSize() {
+        return size;
     }
 }
