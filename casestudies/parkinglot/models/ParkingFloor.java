@@ -6,15 +6,15 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public class ParkingFloor {
-    private BigDecimal floorNum;
+    private int floorNum;
     private List<ParkingSpot> parkingSpots;
 
-    public ParkingFloor(BigDecimal floorNum, List<ParkingSpot> parkingSpots) {
+    public ParkingFloor(int floorNum, List<ParkingSpot> parkingSpots) {
         this.floorNum = floorNum;
         this.parkingSpots = parkingSpots;
     }
 
-    public BigDecimal getFloorNum() {
+    public int getFloorNum() {
         return floorNum;
     }
 
